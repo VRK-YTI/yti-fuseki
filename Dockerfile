@@ -1,4 +1,4 @@
-FROM java:8-jre-alpine
+FROM java:8-jre-alpine@sha256:6a8cbe4335d1a5711a52912b684e30d6dbfab681a6733440ff7241b05a5deefd
 RUN apk add --update pwgen bash wget ca-certificates && rm -rf /var/cache/apk/*
 
 # Fuseki 3.13.1
