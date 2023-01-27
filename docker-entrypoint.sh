@@ -32,8 +32,8 @@ if [ ! -f "$FUSEKI_BASE/shiro.ini" ] ; then
   echo "###################################"
 fi
 
-echo "Copying log4j.properties to $FUSEKI_BASE"
-cp "$FUSEKI_HOME/log4j.properties" "$FUSEKI_BASE/log4j.properties"
+echo "Copying log4j2.properties to $FUSEKI_BASE"
+cp "$FUSEKI_HOME/log4j2.properties" "$FUSEKI_BASE/log4j2.properties"
 
 echo "Copying config.ttl to $FUSEKI_BASE"
 cp "$FUSEKI_HOME/config.ttl" "$FUSEKI_BASE/config.ttl"
