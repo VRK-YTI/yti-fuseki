@@ -26,6 +26,7 @@ RUN wget -O fuseki.tar.gz $FUSEKI_ARCHIVE/jena/binaries/apache-jena-fuseki-$FUSE
 COPY log4j2.properties /jena-fuseki/log4j2.properties
 COPY shiro.ini /jena-fuseki/shiro.ini
 COPY config.ttl /jena-fuseki/config.ttl
+COPY configuration /jena-fuseki/configuration
 COPY docker-entrypoint.sh /
 RUN chmod 755 /docker-entrypoint.sh
 
