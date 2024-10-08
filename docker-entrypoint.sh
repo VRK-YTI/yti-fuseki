@@ -37,6 +37,7 @@ cp "$FUSEKI_HOME/log4j2.properties" "$FUSEKI_BASE/log4j2.properties"
 
 echo "Copying config.ttl to $FUSEKI_BASE"
 cp "$FUSEKI_HOME/config.ttl" "$FUSEKI_BASE/config.ttl"
+cp -r "$FUSEKI_HOME/configuration" "$FUSEKI_BASE"
 
 # $ADMIN_PASSWORD can always override
 if [ -n "$ADMIN_PASSWORD" ] ; then
