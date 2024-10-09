@@ -16,7 +16,7 @@
 
 set -e
 
-if [ ! -f "$FUSEKI_BASE/shiro.ini" ] ; then
+# if [ ! -f "$FUSEKI_BASE/shiro.ini" ] ; then
   # First time
   echo "###################################"
   echo "Initializing Apache Jena Fuseki"
@@ -30,7 +30,7 @@ if [ ! -f "$FUSEKI_BASE/shiro.ini" ] ; then
   fi
   echo ""
   echo "###################################"
-fi
+#fi
 
 echo "Copying log4j2.properties to $FUSEKI_BASE"
 cp "$FUSEKI_HOME/log4j2.properties" "$FUSEKI_BASE/log4j2.properties"
