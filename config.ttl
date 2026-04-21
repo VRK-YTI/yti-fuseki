@@ -14,7 +14,6 @@
    ja:context [ ja:cxtName "arq:queryTimeout" ;  ja:cxtValue "300000" ] ;
    # ja:loadClass "your.code.Class" ;
    fuseki:services (
-     <#core>
      <#user>
      <#concepts>
      <#imports>
@@ -28,25 +27,7 @@ tdb:DatasetTDB  rdfs:subClassOf  ja:RDFDataset .
 tdb:GraphTDB    rdfs:subClassOf  ja:Model .
 
 
- # Core service configuration
-
-<#core>  rdf:type fuseki:Service ;
-    fuseki:name                   "core" ;       # http://host:port/search
-    fuseki:dataset           <#core_dataset> ; 
-    fuseki:serviceQuery           "sparql" ;     # http://host:port/search/sparql?query=...
-    fuseki:serviceUpdate          "update" ;     # http://host:port/core/update?query=...
-	fuseki:serviceReadWriteGraphStore    "data" ; # http://host:port/core/data?query=...
-    fuseki:serviceUpload          "upload" ;     # http://host:post/core/upload?graph="any"
-	fuseki:serviceReadGraphStore  "get" ;        # http://host:post/core/get?graph=default
-	.
-	
-<#core_dataset> rdf:type tdb:DatasetTDB ;
-    tdb:location "/fuseki/databases/CORE_TDB" ;
-    tdb:unionDefaultGraph   true ;
-    # Query timeout on this dataset (1s, 1000 milliseconds)
-    # ja:context [ ja:cxtName "arq:queryTimeout" ;  ja:cxtValue "1000" ] ;
-    .
-
+ # User service configuration
 
 <#user>  rdf:type fuseki:Service ;
     fuseki:name                   "users" ;    # http://host:port/users
@@ -66,7 +47,7 @@ tdb:GraphTDB    rdfs:subClassOf  ja:Model .
     # ja:context [ ja:cxtName "arq:queryTimeout" ;  ja:cxtValue "1000" ] ;
     . 
 
- # Concept service configuration
+# Concept service configuration
 
 <#concepts>  rdf:type fuseki:Service ;
     fuseki:name                   "concept" ;       # http://host:port/search
@@ -83,10 +64,9 @@ tdb:GraphTDB    rdfs:subClassOf  ja:Model .
     tdb:unionDefaultGraph   true ;
     # Query timeout on this dataset (1s, 1000 milliseconds)
     # ja:context [ ja:cxtName "arq:queryTimeout" ;  ja:cxtValue "1000" ] ;
-    .	
-	
-	
-	 # imports service configuration
+    .
+
+# Imports service configuration
 
 <#imports>  rdf:type fuseki:Service ;
     fuseki:name                   "imports" ;       # http://host:port/search
@@ -104,8 +84,8 @@ tdb:GraphTDB    rdfs:subClassOf  ja:Model .
     # Query timeout on this dataset (1s, 1000 milliseconds)
     # ja:context [ ja:cxtName "arq:queryTimeout" ;  ja:cxtValue "1000" ] ;
     .
-    
-    # prov service configuration
+
+# Prov service configuration
 
 <#prov>  rdf:type fuseki:Service ;
     fuseki:name                   "prov" ;       # http://host:port/search
@@ -124,7 +104,7 @@ tdb:GraphTDB    rdfs:subClassOf  ja:Model .
     # ja:context [ ja:cxtName "arq:queryTimeout" ;  ja:cxtValue "1000" ] ;
     .
 
-# scheme service configuration
+# Scheme service configuration
 
 <#scheme>  rdf:type fuseki:Service ;
     fuseki:name                   "scheme" ;       # http://host:port/search
