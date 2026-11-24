@@ -1,4 +1,4 @@
-FROM yti-docker-java-base:corretto-17.0.10
+FROM yti-docker-java-base:corretto-17.0.21
 RUN apk add --update pwgen bash wget ca-certificates && rm -rf /var/cache/apk/*
 
 # Fuseki 4.10.0
